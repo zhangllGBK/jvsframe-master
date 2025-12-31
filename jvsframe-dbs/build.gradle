@@ -1,0 +1,20 @@
+
+dependencies {
+
+    api project(":jvsframe-common")
+
+
+    // https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload
+    api group: 'commons-fileupload', name: 'commons-fileupload', version: '1.5'
+    // https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-server
+    api group: 'org.eclipse.jetty', name: 'jetty-server', version: '9.4.54.v20240208'
+    // https://mvnrepository.com/artifact/org.eclipse.jetty.websocket/websocket-server
+    api group: 'org.eclipse.jetty.websocket', name: 'websocket-server', version: '9.4.54.v20240208'
+
+    // https://mvnrepository.com/artifact/junit/junit
+    testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+}
+
+jar {
+    exclude "**/*.xml"
+}

@@ -1,0 +1,31 @@
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+    api group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.23.1'
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api
+    api group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.23.1'
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl
+    api group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.23.1'
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+    api group: 'org.slf4j', name: 'slf4j-api', version: '1.7.36'
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+    api group: 'org.apache.commons', name: 'commons-lang3', version: '3.8.1'
+    // https://mvnrepository.com/artifact/commons-io/commons-io
+    api group: 'commons-io', name: 'commons-io', version: '2.11.0'
+    // https://mvnrepository.com/artifact/org.jsoup/jsoup
+    api group: 'org.jsoup', name: 'jsoup', version: '1.16.1'
+    // https://mvnrepository.com/artifact/com.alibaba/fastjson
+    api group: 'com.alibaba', name: 'fastjson', version: '1.2.83'
+    // https://mvnrepository.com/artifact/org.dom4j/dom4j
+    api group: 'org.dom4j', name: 'dom4j', version: '2.1.4'
+    // https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-client
+    api group: 'org.eclipse.jetty', name: 'jetty-client', version: '9.4.54.v20240208'
+    api group: 'org.eclipse.jetty.websocket', name: 'websocket-client', version: '9.4.54.v20240208'
+
+    // https://mvnrepository.com/artifact/junit/junit
+    testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+}
+
+jar {
+    exclude "**/*.xml"
+}
