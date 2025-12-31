@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sluice timestamp="0">
+    <policies>
+        <!-- 休市  -->
+        <policy funcId='10053|10054|10055'>
+            <rule rank='before' exp='$matchDates(closeDate, $sysdate())' errcode='1001' priority='9' />
+        </policy>
+
+        <!-- 注册  -->
+        <policy funcId='10017'>
+            <!-- 关闭 -->
+            <rule rank='before' exp='$matchDates(closeTime, $sysdate())' errcode='1002' priority='9' />
+        </policy>
+
+        <!-- 充值  -->
+        <policy funcId='10037'>
+            <!-- 开启,限制黑名单用户 -->
+            <rule rank='before' exp='$match(userids, usercode)' errcode='1004' priority='5' />
+        </policy>
+
+    </policies>
+
+    <variables>
+        <variable type="CONST" name="appIds" value="1008889|1008888" />
+        <variable type="CONST" name="userids" value="10000001|10000002|10000003" />
+        <variable type="CONST" name="closeTime" value="00:00:00~23:59:59" />
+        <variable type="CONST" name="closeDate" value="2019-02-04~2019-02-10" />
+        <variable type="HEAD" name="remoteIp" value="remoteIp" />
+        <variable type="HEAD" name="appId" value="appId" />
+        <variable type="BODY" name="usercode" value="usercode,userid" />
+    </variables>
+
+    <functions>
+        <function clazz="com.jarveis.frame.sluice.Calculator"/>
+    </functions>
+
+</sluice>
