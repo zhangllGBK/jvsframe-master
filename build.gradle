@@ -1,0 +1,49 @@
+group 'com.jarveis'
+version '3.2.0'
+
+subprojects {
+    apply plugin: 'java-library'
+    apply plugin: 'maven'
+
+    group 'com.jarveis'
+    version '3.2.0'
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    repositories {
+        mavenLocal()
+        maven {
+            url "http://192.168.1.172:8081/nexus/repository/maven_custom_group/"
+        }
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    // 获取本地仓库路径
+    def localRepositoryPath = 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath
+    def mavenReleases = "http://192.168.1.172:8081/nexus/repository/maven_custom_hosted/"
+
+    //打包至本地仓库配置
+    uploadArchives {
+        repositories {
+            //mavenDeployer 需要依赖 apply plugin: 'maven'
+            mavenDeployer {
+//                repository(url: localRepositoryPath)
+
+                repository(url: mavenReleases) {
+                    authentication(userName: "admin", password: "admin123")
+                }
+            }
+        }
+    }
+
+    task copyJars(type:Copy) {
+        from configurations.runtimeClasspath
+        into 'build/libs' // 目标位置
+    }
+
+}
+

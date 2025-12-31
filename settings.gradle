@@ -1,0 +1,13 @@
+rootProject.name = 'jvsframe'
+include 'jvsframe-common'
+include 'jvsframe-dbs'
+include 'jvsframe-jdbc'
+include 'jvsframe-task'
+include 'jvsframe-puddle'
+include 'jvsframe-sluice'
+include 'jvsframe-sluice-server'
+include 'jvsframe-weixin'
+include 'jvsframe-sluice-node'
+include 'jvsframe-task-node'
+include 'jvsframe-task-server'
+
