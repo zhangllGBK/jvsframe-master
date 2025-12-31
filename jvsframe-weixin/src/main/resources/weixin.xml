@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<weixin>
+
+    <constants>
+        <constant name="appid" value="wx95e66865ed0c12e8" />
+        <constant name="secret" value="cbcbf97b50711132923fd0c807d14018" />
+        <constant name="token" value="e14xD6Nmt25p4Y3t" />
+    </constants>
+
+    <accounts>
+        <account />
+    </accounts>
+
+    <keywords>
+        <keyword name="" value="" />
+    </keywords>
+
+</weixin>

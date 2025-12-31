@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+
+	<redisConfig>
+		<datasource mode="single">
+			<property name="uri" value="redis://1qaz2wsx@192.168.1.175:6379" />
+			<property name="timeout" value="20000" />
+			<property name="maxTotal" value="1000" />
+			<property name="maxIdle" value="20" />
+			<property name="maxWait" value="10000" />
+			<property name="testOnBorrow" value="true" />
+			<property name="testOnReturn" value="true" />
+			<property name="channel" value="j2cache_channel" />
+		</datasource>
+	</redisConfig>
+
+	<puddleConfig>
+		<puddle>
+			<!-- 缓存等级：(1|2) -->
+			<property name="level" value="1" />
+			<!-- 缓存同步的广播机制: (redis | none) -->
+			<property name="broadcast" value="none" />
+			<!-- 一级缓存: (ehcache | redis | none) -->
+			<property name="l1_provider" value="redis" />
+			<!-- 二级缓存: (ehcache | redis | none)，如果缓存等级为1级，此设置无效 -->
+			<property name="l2_provider" value="none" />
+			<!-- 缓存对象的序列化方式: (fst | fst-snappy | fastjson | java) -->
+			<property name="serialization" value="fst" />
+		</puddle>
+	</puddleConfig>
+
+</config>
