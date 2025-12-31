@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+
+	<module>
+		<parser clazz="com.jarveis.frame.jdbc.JdbcParser" />
+	</module>
+
+	<jdbcConfig>
+		<datasource id="oracle">
+			<property name="druid.driverClassName" value="oracle.jdbc.OracleDriver" />
+			<property name="druid.url" value="jdbc:oracle:thin:@192.168.1.170:1521:tom170" />
+			<property name="druid.username" value="xgplat" />
+			<property name="druid.password" value="xgplat" />
+			<!-- 初始化时获取的连接数， -->
+			<property name="druid.initialSize" value="5" />
+			<!-- 连接池中保留的最大连接数。 -->
+			<property name="druid.maxActive" value="15" />
+			<!-- 连接池中保留的最小连接数。 -->
+			<property name="druid.minIdle" value="3" />
+			<!-- 配置获取连接等待超时的时间(ms)。 -->
+			<property name="druid.maxWait" value="10000" />
+			<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接(ms)， -->
+			<property name="druid.timeBetweenEvictionRunsMillis" value="60000" />
+			<!-- 配置一个连接在池中最小生存的时间(ms)。 -->
+			<property name="druid.minEvictableIdleTimeMillis" value="300000" />
+			<!-- 申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。 -->
+			<property name="druid.testWhileIdle" value="true" />
+			<!-- 申请连接时执行validationQuery检测连接是否有效。 -->
+			<property name="druid.testOnBorrow" value="true" />
+			<!-- 归还连接时执行validationQuery检测连接是否有效。 -->
+			<property name="druid.testOnReturn" value="false" />
+			<!-- 验证连接有效与否的SQL。 -->
+			<property name="druid.validationQuery" value="SELECT 1 FROM DUAL" />
+		</datasource>
+
+		<datasource id="mysql">
+			<property name="druid.driverClassName" value="org.gjt.mm.mysql.Driver" />
+			<property name="druid.url" value="jdbc:mysql://192.168.1.179:3306/shfcocweb" />
+			<property name="druid.username" value="shfcoc" />
+			<property name="druid.password" value="shfcoc" />
+			<!-- 初始化时获取的连接数， -->
+			<property name="druid.initialSize" value="5" />
+			<!-- 连接池中保留的最大连接数。 -->
+			<property name="druid.maxActive" value="15" />
+			<!-- 连接池中保留的最小连接数。 -->
+			<property name="druid.minIdle" value="3" />
+			<!-- 配置获取连接等待超时的时间(ms)。 -->
+			<property name="druid.maxWait" value="10000" />
+			<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接(ms)， -->
+			<property name="druid.timeBetweenEvictionRunsMillis" value="60000" />
+			<!-- 配置一个连接在池中最小生存的时间(ms)。 -->
+			<property name="druid.minEvictableIdleTimeMillis" value="300000" />
+			<!-- 申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。 -->
+			<property name="druid.testWhileIdle" value="true" />
+			<!-- 申请连接时执行validationQuery检测连接是否有效。 -->
+			<property name="druid.testOnBorrow" value="true" />
+			<!-- 归还连接时执行validationQuery检测连接是否有效。 -->
+			<property name="druid.testOnReturn" value="false" />
+			<!-- 验证连接有效与否的SQL。 -->
+			<property name="druid.validationQuery" value="SELECT 1 FROM DUAL" />
+		</datasource>
+
+		<datasource id="dameng" default="true">
+			<property name="druid.driverClassName" value="dm.jdbc.driver.DmDriver" />
+			<property name="druid.url" value="jdbc:dm://192.168.231.101:5236" />
+			<property name="druid.username" value="cms" />
+			<property name="druid.password" value="1qaz2wsx" />
+			<!-- 初始化时获取的连接数， -->
+			<property name="druid.initialSize" value="5" />
+			<!-- 连接池中保留的最大连接数。 -->
+			<property name="druid.maxActive" value="15" />
+			<!-- 连接池中保留的最小连接数。 -->
+			<property name="druid.minIdle" value="3" />
+			<!-- 配置获取连接等待超时的时间(ms)。 -->
+			<property name="druid.maxWait" value="10000" />
+			<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接(ms)， -->
+			<property name="druid.timeBetweenEvictionRunsMillis" value="60000" />
+			<!-- 配置一个连接在池中最小生存的时间(ms)。 -->
+			<property name="druid.minEvictableIdleTimeMillis" value="300000" />
+			<!-- 申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。 -->
+			<property name="druid.testWhileIdle" value="true" />
+			<!-- 申请连接时执行validationQuery检测连接是否有效。 -->
+			<property name="druid.testOnBorrow" value="true" />
+			<!-- 归还连接时执行validationQuery检测连接是否有效。 -->
+			<property name="druid.testOnReturn" value="false" />
+			<!-- 验证连接有效与否的SQL。 -->
+			<property name="druid.validationQuery" value="SELECT 1 FROM DUAL" />
+		</datasource>
+	</jdbcConfig>
+
+	<sql-files>
+		<file path=""/>
+	</sql-files>
+
+</config>

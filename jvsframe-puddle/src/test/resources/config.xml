@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+
+	<module>
+		<parser clazz="com.jarveis.frame.cache.Puddle" />
+	</module>
+
+	<redisConfig>
+		<!--
+		<datasource mode="single">
+			<property name="uri" value="reids://shwebredis@192.168.1.160:9001" />
+			<property name="timeout" value="20000" />
+			<property name="maxTotal" value="1000" />
+			<property name="maxIdle" value="20" />
+			<property name="maxWait" value="10000" />
+			<property name="testOnBorrow" value="true" />
+			<property name="testOnReturn" value="true" />
+			<property name="channel" value="j2cache_channel" />
+		</datasource>
+		-->
+		<datasource mode="cluster">
+			<property name="uri" value="reids://shwebredis@192.168.1.160:9001,reids://shwebredis@192.168.1.160:9002,reids://shwebredis@192.168.1.160:9003,reids://shwebredis@192.168.1.160:9004,reids://shwebredis@192.168.1.160:9005,reids://shwebredis@192.168.1.160:9006" />
+			<property name="timeout" value="20000" />
+			<property name="maxActive" value="30" />
+			<property name="maxTotal" value="1000" />
+			<property name="maxIdle" value="20" />
+			<property name="maxWait" value="10000" />
+			<property name="testOnBorrow" value="true" />
+			<property name="testOnReturn" value="true" />
+			<property name="channel" value="j2cache_channel" />
+		</datasource>
+	</redisConfig>
+
+	<puddleConfig>
+		<puddle>
+			<!-- 缓存等级：(1|2) -->
+			<property name="level" value="1" />
+			<!-- 缓存同步的广播机制: (redis | none) -->
+			<property name="broadcast" value="none" />
+			<!-- 一级缓存: (jvscache | ehcache | redis | none) -->
+			<property name="l1_provider" value="jvscache" />
+			<!-- 二级缓存: (jvscache | ehcache | redis | none)，如果缓存等级为1级，此设置无效 -->
+			<property name="l2_provider" value="none" />
+			<!-- 缓存对象的序列化方式: (fst | fst-snappy | fastjson | java) -->
+			<property name="serialization" value="fastjson" />
+		</puddle>
+	</puddleConfig>
+
+</config>

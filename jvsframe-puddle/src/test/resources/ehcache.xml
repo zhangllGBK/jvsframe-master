@@ -1,0 +1,35 @@
+<ehcache updateCheck="false" dynamicConfig="false">
+
+	<diskStore path="E:\ehcache" />
+
+	<cacheManagerEventListenerFactory
+		class="" properties="" />
+
+	<defaultCache
+			eternal="true"
+			maxElementsInMemory="1"
+			maxElementsOnDisk="0"
+			overflowToDisk="true"
+			diskPersistent="true"
+			memoryStoreEvictionPolicy="LRU">
+	</defaultCache>
+
+	<cache name="swlc"
+			eternal="true"
+			maxElementsInMemory="1"
+			maxElementsOnDisk="0"
+			overflowToDisk="true"
+			diskPersistent="true"
+			memoryStoreEvictionPolicy="LRU">
+		<cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory" />
+		<bootstrapCacheLoaderFactory class="net.sf.ehcache.distribution.RMIBootstrapCacheLoaderFactory"/>
+	</cache>
+
+	<cache name="session"
+		   maxElementsInMemory="10"
+		   eternal="false"
+		   timeToIdleSeconds="1800"
+		   timeToLiveSeconds="1800"
+		   overflowToDisk="false" />
+
+</ehcache>

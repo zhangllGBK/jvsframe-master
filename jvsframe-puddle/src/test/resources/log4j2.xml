@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration status="warn" monitorInterval="5">
+    <properties>
+        <property name="LOG_HOME">E:/logs</property>
+    </properties>
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d [%t] %-5p [%c] - %m%n" />
+        </Console>
+
+        <RollingFile name="LogFile" fileName="${LOG_HOME}/out.log" filePattern="${LOG_HOME}/%d{yyyy-MM-dd}/out-%i.log">
+            <!-- 日志消息格式 -->
+            <PatternLayout pattern="%d [%t] %-5p [%c] - %m%n" />
+            <Policies>
+                <!-- 按照文件大小拆分，100MB -->
+                <SizeBasedTriggeringPolicy size="100MB" />
+                <!-- 按照时间节点拆分，规则根据filePattern定义的 -->
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+            <!-- 在同一个目录下，文件的个限定为 50个，超过进行覆盖 -->
+            <DefaultRolloverStrategy max="50" />
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console" />
+            <!--
+            <AppenderRef ref="LogFile" />
+            -->
+        </Root>
+    </Loggers>
+</configuration>
