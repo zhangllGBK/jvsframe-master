@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<task>
+
+    <taskConfig>
+        <taskPool>
+            <property name="maxSize" value="15" />
+            <property name="minSize" value="3" />
+            <!-- model: (redis | file) -->
+            <property name="saveModel" value="" />
+            <property name="savePath" value="" />
+            <property name="updatePath" value="" />
+            <!-- taskType 远程任务支持类型 service|http|sftp|ftp-->
+            <property name="taskType" value="service|http" />
+        </taskPool>
+        <tasks>
+            <!-- time=“任务执行完后，暂停的时间，时间单（s-秒，m-分，h-小时，d-天）”  -->
+            <!--
+            <task code="10001" time="20s" class="com.jarveis.frame.task.handle.ServiceTask" param="" nodes="301|302"/>
+            <task code="10006" time="20s" class="com.jarveis.frame.task.handle.HttpTask" param="" nodes="301|302"/>
+            -->
+            <task time="60s" class="com.jarveis.frame.task.EchoTask"/>
+        </tasks>
+    </taskConfig>
+
+</task>
